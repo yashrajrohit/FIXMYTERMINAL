@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <div class="navbar">
+      <div id="navimg"><img src="/logo-removebg-preview.png" alt="" /></div>
+      <ul id="navlinks">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Database</a></li>
+        <li><a href="#">Learn</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <div class="btn-group">
+        <button id="themeToggle">🌙</button>
+        <button id="loginBtn">Login</button>
+      </div>
+    </div>
+    <footer class="footer">
+  <div class="footer-container">
+    <!-- Brand -->
+    <div class="footer-section">
+      <h2>FixMyTerminal</h2>
+      <p>Your one-stop solution for terminal issues, themes, and customization support.</p>
+    </div>
+
+    <!-- Services -->
+    <div class="footer-section">
+      <h3>Services</h3>
+      <ul>
+        <li><a href="#">Theme Fixes</a></li>
+        <li><a href="#">Terminal Customization</a></li>
+        <li><a href="#">Bug Reports</a></li>
+        <li><a href="#">User Guides</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div class="footer-section">
+      <h3>Contact</h3>
+      <ul>
+        <li>Email: <a href="mailto:support@fixmyterminal.com">support@fixmyterminal.com</a></li>
+        <li>Phone: +91-12345-67890</li>
+        <li>Location: India</li>
+      </ul>
+    </div>
+
+    <!-- Social -->
+    <div class="footer-section">
+      <h3>Follow Us</h3>
+      <div class="social-icons">
+        <a href="#" title="Twitter">🐦</a>
+        <a href="#" title="GitHub">💻</a>
+        <a href="#" title="Instagram">📸</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2025 FixMyTerminal. All rights reserved.
+  </div>
+</footer>
+
+
+    <script>
+      const themeToggle = document.getElementById("themeToggle");
+      const body = document.body;
+
+      // Load saved theme from localStorage
+      const currentTheme = localStorage.getItem("theme");
+      if (currentTheme === "dark") {
+        body.classList.add("dark-theme");
+        themeToggle.textContent = "☀️";
+      }
+
+      themeToggle.addEventListener("click", () => {
+        body.classList.toggle("dark-theme");
+
+        // Save preference
+        if (body.classList.contains("dark-theme")) {
+          localStorage.setItem("theme", "dark");
+          themeToggle.textContent = "🌙";
+        } else {
+          localStorage.setItem("theme", "light");
+          themeToggle.textContent = "☀️";
+        }
+      });
+    </script>
+  </body>
+</html>
